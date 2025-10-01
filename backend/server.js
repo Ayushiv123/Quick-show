@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./configs/db.js";
 import { clerkMiddleware } from '@clerk/express'
-import { Inngest ,functions } from "./inngest/index.js";
+import { inngest ,functions } from "./inngest/index.js";
 import { serve } from "inngest/express";
 
 dotenv.config();
@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(cors());
 app.use(clerkMiddleware())
 
-const inngest = new Inngest({ id: "my-app" });
-const functions = [];
+// const inngest = new Inngest({ id: "my-app" });
+// const functions = [];
 
 app.get("/", (req, res) => res.send("server is Live"));
 
